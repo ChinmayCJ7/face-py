@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <h2>Known Faces</h2>
+    <ul>
+        {% for face in faces %}
+            <li>{{ face }} <a href="{{ url_for('delete_face', name=face) }}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('index') }}">Go to Home</a>
+</body>
+</html>
